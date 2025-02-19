@@ -20,35 +20,30 @@ class MyApp extends StatelessWidget {
           title: const Text('MyWidget'),
           centerTitle: true,
         ),
-        body: Row(
-          
-          children: const [
-            Icon(
-              Icons.star,
-              size: 60,
-              color: Colors.yellow,
-            ),
-            Icon(
-              Icons.star,
-              size: 60,
-              color: Colors.yellow,
-            ),
-            Icon(
-              Icons.star,
-              size: 60,
-              color: Colors.grey,
-            ),
-            Icon(
-              Icons.star,
-              size: 60,
-              color: Colors.grey,
-            ),
-            Icon(
-              Icons.star,
-              size: 60,
-              color: Colors.grey,
-            ),
-          ],
+        body: Container(
+          height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.star,
+                size: 60,
+                color: Colors.yellow,
+              ),
+              Image(
+                image: AssetImage('assets/juta1.png'),
+                width: 100,
+                height: 100,
+              ),
+              Icon(
+                Icons.star,
+                weight: 50,
+                size: 60,
+                color: Colors.yellow,
+              ),
+            ],
+          ),
         ),
       ),
     );
