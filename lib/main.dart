@@ -10,32 +10,47 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text('MyWidget'),
+          centerTitle: true,
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: const Text('MyWidget'),
-            centerTitle: true,
-          ),
-          body: Row(
-            children: const [
-              Icon(
-                Icons.memory,
-                size: 60,
-                color: Colors.red,
-              ),
-              Text(
-                "Flutter Row",
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 40,
-                ),
-              ),
-            ],
-          ),
-        ));
+        body: Row(
+          
+          children: const [
+            Icon(
+              Icons.star,
+              size: 60,
+              color: Colors.yellow,
+            ),
+            Icon(
+              Icons.star,
+              size: 60,
+              color: Colors.yellow,
+            ),
+            Icon(
+              Icons.star,
+              size: 60,
+              color: Colors.grey,
+            ),
+            Icon(
+              Icons.star,
+              size: 60,
+              color: Colors.grey,
+            ),
+            Icon(
+              Icons.star,
+              size: 60,
+              color: Colors.grey,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
