@@ -4,9 +4,22 @@ void main() {
   runApp(const MyApp());
 }
 
+/*
+overflow handle:
+1. Single child scroll view
+  -Scrollable
+2. 
+*/
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+/*overflow handle:
+1. Single child scroll view
+  -Scrollable
+2. Expended
+  - compress spaces, overwrite the objects
+3. Flexible
+  - like as expended but give more cumstomization
+*/
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,33 +29,25 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('MyWidget'),
+          backgroundColor: Colors.blue,
+          title: const Text('Flutter Basics - 02',
+              style: TextStyle(color: Colors.white)),
           centerTitle: true,
         ),
         body: Container(
+          width: double.infinity,
+          color: Colors.grey,
           height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.star,
-                size: 60,
-                color: Colors.yellow,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                100,
+                (index) => Icon(Icons.star,
+                    size: index.toDouble(), color: Colors.blue),
               ),
-              Image(
-                image: AssetImage('assets/juta1.png'),
-                width: 100,
-                height: 100,
-              ),
-              Icon(
-                Icons.star,
-                weight: 50,
-                size: 60,
-                color: Colors.yellow,
-              ),
-            ],
+            ),
           ),
         ),
       ),
